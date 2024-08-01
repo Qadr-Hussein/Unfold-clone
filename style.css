@@ -1,0 +1,437 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: font1;
+  src: url(font1.woff2);
+}
+
+@font-face {
+   font-family: font2;
+   src: url(font2.woff2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,html{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.btn{
+   position: relative;
+   overflow: hidden;
+   z-index: 99;
+}
+
+
+ .btn span{
+    transition: all ease-in-out 0.4s;
+ }
+.btn:hover span{
+   display: block;
+   animation: up  linear 0.4s;
+   animation-delay: 0.12s;
+   
+}
+
+
+@keyframes up {
+   from{
+   transform: translateY(40%);
+   opacity: 0;
+   }
+   to{
+   transform: translateY(0);
+   opacity: 1;
+   }
+}
+
+
+.btn::before{
+   content: '';
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   position: absolute;
+   width: 100%;
+   background: #31F7C8;
+   top: -100%;
+   
+   left: 0;
+   z-index: -10;
+   transition: all ease-in-out 0.2s;
+
+}
+
+.btn:hover::before{
+  top: 0;
+}
+
+.jump {
+   display: inline-flex;
+ }
+ 
+ .dot {
+   animation: jump infinite linear 0.9s;
+   font-weight: 900;
+   font-size: 1em;
+ }
+ 
+ .dot:nth-child(1) {
+   animation-delay: 0s;
+ }
+ 
+ .dot:nth-child(2) {
+   animation-delay: 0.1s;
+ }
+ 
+ .dot:nth-child(3) {
+   animation-delay: 0.2s;
+ }
+ 
+ @keyframes jump {
+   0% {
+     transform: translateY(0%);
+   }
+   50% {
+     transform: translateY(-10%);
+   }
+   100% {
+     transform: translateY(0%);
+   }
+ }
+ 
+ .components{
+   cursor: grab;
+ }
+  
+
+
+@keyframes arrow {
+   from{
+      transform: translateX(0%);
+   }
+   to{
+      transform: translateX(100%);
+   }
+}
+
+
+ .scroller1 img{
+   min-width: 18vw;
+   object-fit: cover;
+   
+ }
+
+ .scroller::-webkit-scrollbar{
+   display: none;
+ }
+ .scroller{
+   rotate: -20deg;
+ }
+ .marquee::-webkit-scrollbar{
+   display: none;
+ }
+ .marquee{
+   overflow-x: auto;
+   position: relative;
+ }
+ .scroll{
+   animation: scroll infinite 4s linear;
+   white-space: nowrap;
+ }
+
+ @keyframes scroll {
+   from{
+      transform: translateX(0%);
+   }
+   to{
+      transform: translateX(-100%);
+   }
+ }
+ .cols h3{
+   white-space: nowrap;
+ }
+
+ .yummy::-webkit-scrollbar{
+   display: none;
+ }
+ .yummy1{
+   animation: scroll infinite 30s linear;
+
+ }
+
+
+
+
+/* media */
+
+
+
+/* desktop */
+
+@media(min-width:1200px){
+   .cont{
+     font-size: 4vw; 
+   }
+   /* page1 */
+   .left img{
+      width: 11vw;
+   }
+}
+
+
+/* desktop */
+@media(max-width:1200px){
+   .cont{
+      font-size: 4.5vw; 
+    }
+     /* page1 */
+   .left img{
+      width: 12vw;
+   }
+
+}
+
+
+/* laptop */
+@media(max-width:1024px){
+   .cont{
+      font-size:5vw ; 
+    }
+     /* page1 */
+   .left img{
+      width: 13vw;
+   }
+   .green{
+      min-height: 60vw;
+   }
+}
+
+
+/* 900 */
+@media(max-width:900px){
+   .cont{
+      font-size:5.5vw ; 
+    }
+     /* page1 */
+   .left img{
+      width: 15vw ;
+   }
+   .green{
+      min-height: 61vw;
+   }
+   
+}
+
+
+/* tablet */
+@media(max-width:768px){
+   .cont{
+      font-size: 6vw; 
+    }
+     /* page1 */
+   .left img{
+      width: 16.5vw ;
+   }
+   /* page2 */
+   .time{
+      flex-wrap: wrap;
+      gap: 4vw;
+   }
+   .time p br,.bold h1 br{
+      display: none;
+   }
+   .bold h1{
+      font-size: 4vw;
+   }
+   .slack{
+      position: relative;
+      /* width: 100%; */
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+   }
+   .lefty,.righty,.center{
+      position: relative;
+      left: 0;
+      right: 0;
+      width: 100%;
+      gap: 2vw;
+      padding: 0 3vmax; 
+      /* width: 100%; */
+      /* background: red; */
+   }
+   .righty{
+      align-items: start;
+     
+   }
+   .pics{
+      display: none;
+   }
+   .components{
+      transform: rotate(0deg);
+      min-width: 100%;
+      min-height: 30vw;
+      font-size: 9vmax;
+      gap: 8vw;
+   }
+   .people img{
+      max-width: 8vw;
+   }
+   .people{
+      flex-direction: column;
+      align-items: start;
+      font-size: 8vmax;
+   }
+   .review{
+      margin-top: 4vw;
+   }
+   .two{
+      flex-wrap: wrap;
+      align-items: start;
+   }
+   .yellow,.blue{
+      width: 100%;
+   }
+   .green{
+      min-height: 84vw;
+   }
+   
+}
+
+
+/* 600 */
+@media(max-width:600px){
+   .cont{
+      font-size:6.8vw ; 
+    }
+     /* page1 */
+   .left img{
+      width: 17.5vw;
+   }
+   .btn{
+      padding: 4.5vw 5.5vw;
+   }
+   /* page2 */
+   .small{
+      flex-direction: column;
+      align-items: start;
+   }
+   .holder{
+      align-items: end;
+   }
+   
+   .subs{
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: start;
+      gap: 4vw;
+      padding-left: 4vw;
+      flex-basis: 0.333%;
+   }
+   .boxes{
+      flex-wrap: wrap;
+      align-items: start;
+      gap:2vw;
+   }
+   .green{
+      width: 100%;
+   }
+   .boxes br{
+      display: none;
+   }
+   .boxes p{
+      font-size: 3vw;
+   }
+}
+
+/* phone */
+@media(max-width:480px){
+   .cont{
+      font-size: 8vw; 
+    }
+     /* page1 */
+   .left img{
+      width: 19vw;
+   }
+   .btn{
+      padding: 5.5vw 6.5vw;
+   }
+   .navbar{
+      width: 60vmax;
+      height: 10vmax;
+      font-size: 10vw;
+   }
+   /* page3 */
+   .white{
+      height:60vw;
+   }
+   .brands{
+      flex-direction: column;
+   }
+   .brands img{
+      width: 8vw;
+   }
+   .partner{
+      align-items: center;
+   }
+   .components{
+     min-width: 100%;
+   }
+   .components h2,small{
+      font-size: 4vw;
+   }
+   .scroll h2{
+      font-size: 4vw;
+   }
+ 
+   .jamms{
+      height: 60vw;
+   }
+   .beyond{
+      flex-wrap: wrap-reverse;
+
+   }
+   .beyond p br{
+      display: none;
+   }
+}
+
+/* 300,200 */
+@media(max-width:300px){
+   .cont{
+      font-size: 9.5vw; 
+    }
+     /* page1 */
+   .left img{
+      width: 34vw;
+   }
+   .navbar{
+      width: 100vw;
+      height: 10vmax;
+      font-size: 9.5vw ;
+   }
+   /* page2 */
+   .black{
+      min-height: 55vw;
+      width: 100%;
+
+   }
+   .components{
+      /* min-width: ; */
+    }
+    .components h2,p{
+       font-size: 5vw;
+    }
+}
+
+
